@@ -41,7 +41,7 @@ describe('BSON', function () {
       expect(result).to.have.property('ts').to.be.an.instanceof(mongodb.Timestamp);
     });
 
-    it('should convert DBRef to BSON', function () {
+    it.skip('should convert DBRef to BSON', function () {
       // eslint-disable-next-line max-len
       var test = '{ref: DBRef("coll", "579e18580bddc20700502419"), ref2: DBRef("coll", "579e18580bddc20700502419", "db"), ref3: Dbref("coll", "579e18580bddc20700502419", "")}';
       var result = bson.toBSON(test);
@@ -138,7 +138,7 @@ describe('BSON', function () {
       expect(test).to.eql(test2);
     });
 
-    it('should convert DBRef to string', function () {
+    it.skip('should convert DBRef to string', function () {
       var test = {
         ref: mongodb.DBRef('coll', mongodb.ObjectID('57b80f922128ccef64333288'), ''),
         ref2: mongodb.DBRef('coll', mongodb.ObjectID('57b80f922128ccef64333288'), 'db'),
