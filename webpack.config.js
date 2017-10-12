@@ -8,9 +8,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'development';
 const isDev = env === 'development';
-const isProd = !isDev;
+// const isProd = !isDev;
 
-const fileSuffix = isDev ? '' : '-[chunkhash].min';
+const fileSuffix = '';
 
 function resolveModulePath(name) {
   const packageJson = '/package.json';
@@ -63,8 +63,8 @@ module.exports = {
       filename: `[name]${fileSuffix}.js`,
     }),
 
-    isProd && (new webpack.optimize.UglifyJsPlugin()),
-    isProd && (new webpack.optimize.OccurrenceOrderPlugin(true)),
+    //isProd && (new webpack.optimize.UglifyJsPlugin()),
+    //isProd && (new webpack.optimize.OccurrenceOrderPlugin(true)),
 
     new CopyWebpackPlugin([
       { from: 'public/images/*', to: 'img/[name].[ext]' },
